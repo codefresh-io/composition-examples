@@ -1,0 +1,14 @@
+app:
+  image: joomla
+  links:
+    - db:mysql
+  ports:
+    - 80:80
+  restart: always
+
+db:
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+    MYSQL_DATABASE: joomla
+  restart: always
