@@ -1,18 +1,20 @@
-app:
-  image: joomla
-  links:
-    - db:mysql
-  ports:
-    - 80
-  restart: always
+version: '3'
+services:
+  app:
+    image: joomla
+    links:
+      - db:mysql
+    ports:
+      - 80
+    restart: always
 
-db:
-  image: mysql
-  ports:
-    - 3306
-  environment:
-    MYSQL_ROOT_PASSWORD: joomla
-    MYSQL_USER: joomla
-    MYSQL_PASSWORD: joomla
-    MYSQL_DATABASE: joomla
-  restart: always
+  db:
+    image: mysql
+    ports:
+      - 3306
+    environment:
+      MYSQL_ROOT_PASSWORD: joomla
+      MYSQL_USER: joomla
+      MYSQL_PASSWORD: joomla
+      MYSQL_DATABASE: joomla
+    restart: always

@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   result:
     image: 'containers101/cf-example-result:master'
