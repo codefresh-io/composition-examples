@@ -1,0 +1,17 @@
+version: '2'
+volumes:
+  volume-service:
+    driver: local
+services:
+  volume-service:
+    image: '$IMAGE_NAME:$IMAGE_TAG'
+    volumes:
+      - 'volume-service:/$FOLDER'
+    ports:
+      - '1337'
+  terminal:
+    image: 'containers101/cfterminal:master'
+    ports:
+      - '8000'
+    volumes_from:
+      - volume-service
