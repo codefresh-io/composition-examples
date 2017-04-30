@@ -6,11 +6,13 @@ services:
   volume-service:
     image: '$IMAGE_NAME:$IMAGE_TAG'
     volumes:
-      - 'volume-service:/$FOLDER'
+      - 'volume-service:$FOLDER'
     ports:
       - '1337'
   terminal:
     image: 'containers101/cfterminal:master'
+    environment:
+      - FOLDER=$FOLDER
     ports:
       - '8000'
     volumes_from:
